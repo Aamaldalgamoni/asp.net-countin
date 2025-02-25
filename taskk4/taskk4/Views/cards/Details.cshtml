@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+@model taskk4.Models.Productt
+
+
+<h1>Details</h1>
+
+<table class="table">
+   
+    <tr>
+        <th><h4>Name</h4></th>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <th><h4>Location</h4></th>
+        <td>@Model.Price</td>
+    </tr>
+    <tr>
+        <th><h4>Manager</h4></th>
+        <td>@Model.Description</td>
+    </tr>
+    <tr>
+    <th><h4>Budget</h4></th>
+        <td>@Model.Image</td>
+
+    </tr>
+</table>
+<a href="@Url.Action("Index", "cards")" class="btn btn-primary">Back to List</a>

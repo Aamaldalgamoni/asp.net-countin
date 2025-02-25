@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model List<Productt>
+
+<h1>Index</h1>
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="@item.Image" class="card-img-top" alt="@item.Name" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.Description</p>
+                        <p class="card-text">Price: $@item.Price</p>
+                        <a href="@Url.Action("Details", "cards", new { id = item.Id })" class="btn btn-info">Details</a>
+                        <a href="@Url.Action("Edit", "cards", new { id = item.Id })" class="btn btn-warning">Edit</a>
+                        <a href="@Url.Action("Delete", "cards", new { id = item.Id })" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<a href="@Url.Action("Create", "Product")" class="btn btn-primary mt-3">Create New Product</a>
